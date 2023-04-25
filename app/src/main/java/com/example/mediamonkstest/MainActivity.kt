@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         //test
         CoroutineScope(Dispatchers.IO).launch {
-            val response = RetrofitManager().service.getAlbums().execute()
+            val response = RetrofitManager().service.getPhotos().execute()
 
             val isSuccessful = response.isSuccessful
             val body = response.body()
