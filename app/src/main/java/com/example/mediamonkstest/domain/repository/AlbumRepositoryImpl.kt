@@ -17,6 +17,7 @@ class AlbumRepositoryImpl(
         albumsResponse.body()?.let { list ->
             list.forEach { entityList.add(it.toEntity()) }
         }
+        roomManager.albumDao.deleteAll()
         roomManager.albumDao.insert(*entityList.toTypedArray())
 
         return roomManager.albumDao.getAll()

@@ -17,6 +17,7 @@ class PhotoRepositoryImpl(
         photosResponse.body()?.let { list ->
             list.forEach { entityList.add(it.toEntity()) }
         }
+        roomManager.photoDao.deleteAll()
         roomManager.photoDao.insert(*entityList.toTypedArray())
 
         return roomManager.photoDao.getAllByAlbumId(albumId)
