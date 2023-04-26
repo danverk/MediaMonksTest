@@ -1,5 +1,6 @@
 package com.example.mediamonkstest.view.photo
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -13,7 +14,6 @@ import com.example.mediamonkstest.view.ListItemOnClickCallback
 class PhotosActivity : AppCompatActivity(), ListItemOnClickCallback {
 
     private val viewmodel by viewModels<PhotosViewModel>()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +40,10 @@ class PhotosActivity : AppCompatActivity(), ListItemOnClickCallback {
     }
 
     override fun onListItemClick(itemId: Int) {
-//todo: open photo detail activity with itemId arg
+        val intent = Intent(this, PhotoDetailActivity::class.java)
+        val bundle = Bundle()
+        bundle.putInt("photoId", itemId)
+        intent.putExtras(bundle)
+        startActivity(intent)
     }
 }

@@ -3,7 +3,6 @@ package com.example.mediamonkstest.view.photo
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.mediamonkstest.domain.repository.AlbumRepository
 import com.example.mediamonkstest.domain.repository.PhotoRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -16,13 +15,13 @@ class PhotosViewModel : ViewModel() {
     val state = MutableLiveData<PhotosViewModelState>()
     val photoRepository: PhotoRepository by inject(PhotoRepository::class.java)
 
-    fun loadPhotosByAlbumId(albumId:Int) {
+    fun loadPhotosByAlbumId(albumId: Int) {
         viewModelScope.launch {
             try {
                 val photoList = withContext(Dispatchers.IO) {
                     photoRepository.getPhotosByAlbumId(albumId)
                 }
-                val photoItemList = photoList.map { PhotoItem(it.id, it.title,it.thumbnailUrl) }
+                val photoItemList = photoList.map { PhotoItem(it.id, it.title, it.thumbnailUrl) }
 
                 state.value = PhotosViewModelState.DataReady(photoItemList)
             } catch (e: Exception) {

@@ -8,7 +8,7 @@ import com.example.mediamonkstest.domain.local.model.toEntity
 class PhotoRepositoryImpl(
     private val retrofitManager: RetrofitManager,
     private val roomManager: RoomManager
-) : PhotoRepository{
+) : PhotoRepository {
 
     override suspend fun getPhotosByAlbumId(albumId: Int): List<PhotoEntity> {
         val photosResponse = retrofitManager.service.getPhotos().execute()
@@ -21,5 +21,9 @@ class PhotoRepositoryImpl(
         roomManager.photoDao.insert(*entityList.toTypedArray())
 
         return roomManager.photoDao.getAllByAlbumId(albumId)
+    }
+
+    override suspend fun getPhotoById(photoId: Int): PhotoEntity {
+        return roomManager.photoDao.getById(photoId)
     }
 }

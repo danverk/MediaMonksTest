@@ -16,6 +16,9 @@ interface PhotoDao {
     @Query("SELECT * FROM photo WHERE album_id = :albumId")
     fun getAllByAlbumId(albumId: Int): List<PhotoEntity>
 
+    @Query("SELECT * FROM photo WHERE id = :photoId")
+    fun getById(photoId: Int): PhotoEntity
+
     @Query("DELETE FROM photo")
     fun deleteAll()
 }

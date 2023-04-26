@@ -12,7 +12,7 @@ import org.koin.dsl.module
 val appModule = module {
     single { RetrofitManager() }
     single { RoomManager(androidContext()) }
-    single<AlbumRepository> { AlbumRepositoryImpl(get(),get()) }
-    single<PhotoRepository> { PhotoRepositoryImpl(get(),get()) }
+    single<AlbumRepository> { AlbumRepositoryImpl(get(), get()) }
+    single<PhotoRepository> { PhotoRepositoryImpl(get(), get()) }
 
 }

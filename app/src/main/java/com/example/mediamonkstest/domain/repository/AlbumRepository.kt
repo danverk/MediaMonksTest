@@ -4,6 +4,6 @@ import com.example.mediamonkstest.domain.local.model.AlbumEntity
 
 interface AlbumRepository {
 
-   suspend fun getAlbums():List<AlbumEntity>
+    suspend fun getAlbums(): List<AlbumEntity>
 
 }

@@ -1,5 +1,6 @@
 package com.example.mediamonkstest.view.album
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -9,14 +10,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mediamonkstest.R
 import com.example.mediamonkstest.view.ListItemOnClickCallback
-import android.content.Intent
 import com.example.mediamonkstest.view.photo.PhotosActivity
 
 
 class AlbumsActivity : AppCompatActivity(), ListItemOnClickCallback {
 
     private val viewmodel by viewModels<AlbumsViewModel>()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
