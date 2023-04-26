@@ -1,4 +1,4 @@
-package com.example.mediamonkstest.view
+package com.example.mediamonkstest.view.album
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mediamonkstest.R
+import com.example.mediamonkstest.view.ListItemOnClickCallback
 
 
 class AlbumsAdapter(

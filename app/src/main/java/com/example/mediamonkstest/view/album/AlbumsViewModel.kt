@@ -1,4 +1,4 @@
-package com.example.mediamonkstest.view
+package com.example.mediamonkstest.view.album
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

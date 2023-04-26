@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.album.AlbumsActivity">
+    tools:context=".view.photo.PhotosActivity">
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_albums"
+        android:id="@+id/recycler_view_photos"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

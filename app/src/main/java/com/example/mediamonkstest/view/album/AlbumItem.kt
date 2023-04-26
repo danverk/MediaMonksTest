@@ -1,4 +1,4 @@
-package com.example.mediamonkstest.view
+package com.example.mediamonkstest.view.album
 
 data class AlbumItem(
     val albumId: Int,
